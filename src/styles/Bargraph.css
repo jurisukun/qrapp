@@ -1,0 +1,52 @@
+.topdiv {
+  width: 100%;
+}
+.subtop,
+.subtop h3 {
+  width: 100%;
+}
+.subtop h3 {
+  text-align: center;
+}
+.datecourse {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.datecourse div {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+#total {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+#total span {
+  padding: 0 5px;
+  text-align: center;
+  color: rgb(158, 6, 95);
+}
+
+@media only screen and (max-width: 500px) {
+  .bar {
+    overflow-y: scroll;
+  }
+  .datecourse {
+    width: 100%;
+    .datediv,
+    .coursediv {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+    }
+  }
+  .bardiv {
+    width: 100%;
+    min-height: 80%;
+  }
+}
