@@ -26,7 +26,6 @@ function QRscan() {
 
   socket.on("newcount", (data) => {
     setCurrentCount(data);
-    console.log(data);
   });
 
   useEffect(() => {
@@ -137,6 +136,7 @@ function QRscan() {
       })();
     }
   }, [student]);
+
   return (
     <>
       <div key={currentCount}>

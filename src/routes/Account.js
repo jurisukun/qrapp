@@ -111,12 +111,12 @@ const Account = () => {
         if (data.message) {
           alert(data.message);
         } else {
-          alert("Account added successfully");
           username.value = "";
           password.value = "";
           role.value = "";
           setAccounts(data);
           setIsAdding(false);
+          alert("Account added successfully");
         }
       } catch (error) {
         console.log(error);
@@ -139,66 +139,67 @@ const Account = () => {
           </button>
           {/* <input type="text" placeholder="Search" /> */}
         </div>
-
-        <div
-          style={isAdding ? { display: "flex" } : { display: "none" }}
-          className="add_container"
-        >
-          <h1>Add Account</h1>
-          <div className="form_container">
-            <label htmlFor="username">Username</label>
-            <input type="text" placeholder="Username" id="username" />
-          </div>
-          <div className="form_container">
-            <label htmlFor="password">Password</label>
-            <input type="password" placeholder="Password" id="password" />
-          </div>
-          <div className="form_container">
-            <label htmlFor="role">Role</label>
-            <select
-              name="role"
-              id="role"
-              onChange={(e) => {
-                if (e.target.value === "gate") {
-                  setIsgate(true);
-                } else {
-                  setIsgate(false);
-                }
-              }}
-            >
-              <option value="">Select Role</option>
-              <option value="admin">Admin</option>
-              <option value="gate">Gate</option>
-            </select>
-          </div>
+        {isAdding && (
           <div
-            style={isgate ? { display: "flex" } : { display: "none" }}
-            className="form_container"
+            style={isAdding ? { display: "flex" } : { display: "none" }}
+            className="add_container"
           >
-            <label htmlFor="gatenum">Gate Number</label>
-            <input
-              type="number
-            "
-              pattern="[0-9]*"
-              id="gatenum"
-              placeholder="Gate number"
-            />
-          </div>
-          <div className="btn">
-            <button type="button" onClick={handleAdd}>
-              Add
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setIsAdding(false);
-                setIsgate(false);
-              }}
+            <h1>Add Account</h1>
+            <div className="form_container">
+              <label htmlFor="username">Username</label>
+              <input type="text" placeholder="Username" id="username" />
+            </div>
+            <div className="form_container">
+              <label htmlFor="password">Password</label>
+              <input type="password" placeholder="Password" id="password" />
+            </div>
+            <div className="form_container">
+              <label htmlFor="role">Role</label>
+              <select
+                name="role"
+                id="role"
+                onChange={(e) => {
+                  if (e.target.value === "gate") {
+                    setIsgate(true);
+                  } else {
+                    setIsgate(false);
+                  }
+                }}
+              >
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="gate">Gate</option>
+              </select>
+            </div>
+            <div
+              style={isgate ? { display: "flex" } : { display: "none" }}
+              className="form_container"
             >
-              Cancel
-            </button>
+              <label htmlFor="gatenum">Gate Number</label>
+              <input
+                type="number
+            "
+                pattern="[0-9]*"
+                id="gatenum"
+                placeholder="Gate number"
+              />
+            </div>
+            <div className="btn">
+              <button type="button" onClick={handleAdd}>
+                Add
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsAdding(false);
+                  setIsgate(false);
+                }}
+              >
+                Cancel
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {isEditing && (
           <div

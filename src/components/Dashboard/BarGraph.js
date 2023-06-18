@@ -166,7 +166,7 @@ function MyResponsiveBar() {
       }
       console.log(days);
 
-      let keys = [];
+      let keys = ["super", "admin", "gate0", "gate1", "gate2", "gate3"];
       let insidefiltered = [];
       let outsidefiltered = [];
       const colors = [
@@ -239,7 +239,7 @@ function MyResponsiveBar() {
           }
         });
       });
-      keys.push("gate2", "gate3");
+
       console.log(insidefiltered);
       console.log(keys);
       setBarData(insidefiltered);

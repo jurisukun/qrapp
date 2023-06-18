@@ -433,6 +433,15 @@ function Attendance() {
                         ) {
                           return true;
                         }
+                        if (prop == "date") {
+                          if (
+                            format(new Date(element[prop]), "MMMM dd, yyyy")
+                              .toLowerCase()
+                              .includes(tomap.toLowerCase())
+                          ) {
+                            return true;
+                          }
+                        }
                       }
                       return false;
                     }

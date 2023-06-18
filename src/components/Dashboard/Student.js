@@ -440,15 +440,16 @@ const Student = () => {
                         if (
                           student.std_name
                             .toLowerCase()
-                            .includes(
-                              search.toLowerCase() ||
-                                student.course
-                                  .toLowerCase()
-                                  .includes(search.toLowerCase()) ||
-                                student.year_and_section
-                                  .toLowerCase()
-                                  .includes(search.toLowerCase())
-                            )
+                            .includes(search.toLowerCase()) ||
+                          student.course
+                            .toLowerCase()
+                            .includes(search.toLowerCase()) ||
+                          student.year_and_section
+                            .toLowerCase()
+                            .includes(search.toLowerCase()) ||
+                          student.id
+                            .toLowerCase()
+                            .includes(search.toLowerCase())
                         ) {
                           return student;
                         }
